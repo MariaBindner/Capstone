@@ -1,0 +1,41 @@
+**PLEASE SCROLL DOWN TO LINE 238 FOR MARIA BINDNER'S HOMEWORK**
+
+Capstone Requirements
+# Project Planning Homework
+
+<!-- [Week 1 Homework](1-Homework.md) -->
+
+- Create Definition Statement (I want to build an application that�)
+**I want to build a simple, user-friendly application that places group food orders easily, accurately and succinctly.  This application will catch all special requirements and order notes.**
+
+- Define Your Audience / Who is going to be using your application
+**My target audience for my application will be clerical staff, assistants, support staff, coordinators, adult order placers, friend groups, parents and event planners.**
+
+- Define your content (color scheme, fonts, icons, images, logo, what you want on each page of your application. 
+**The color scheme will be white, black and red.**
+**The fonts will be Pacifico for main heading splash and Cormorant Garamond for the body of the pages**
+**Icons, menu will have three hamburger icons to represent the three choices**
+**Logo will have a "yum yum" outline icon of either a face or a creative mouth (yum yum image ii in red)**
+**I want a very simple menu on each page, consistent look, feel throughout**
+**This application will be focused on desktop users**
+
+
+- [Mural Board - Complete User Persona](https://app.mural.co/template/c5cae3de-aeb4-487f-86da-35aa333d11f6/9ee833d5-2629-40ea-a239-6308d3a60980)
+**Mural board in saved in Capstone**links.md file**
+- Research: Look at other applications similar to what you want to do and document what you like / don�t like so you can make your application different
+I liked a site call Harver and stayed with it.  Link is in the CapstoneLinks.md file**
+
+- Create wireframes
+  - One wireframe for each page of your application, min of 5 pages
+*Wireframes are in a pdf and will create a jira ticket to learn how to add a pdt to my repo**
+**I have size pages of wireframes in a pdf**
+
+- Create User Flow Chart
+**I will open a jira ticket for help on creating my flow chart. Ran into issues when adding it to my repo.**
+
+- SWOT Analysis
+**SWOT is saved in my "docs" folder.**
+
+
+## This is due by the end of day (EOD) Sunday before week 4 begins.
+

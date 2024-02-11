@@ -1,0 +1,45 @@
+﻿SWOT Analysis 
+In each of the below categories, list out the strengths, weaknesses, opportunities and threats you see for your application:  
+(Example of a threat would be competition from similar applications BUT your strength would be how your application is different or better than the competition.)  
+
+
+LIST A MINIMUM OF 3 ITEMS IN EACH CATEGORY
+ (This is based on research you have completed for your application.) 
+
+
+S
+Strengths 
+Accuracy
+Ease of use
+Historical data
+
+
+
+
+	W
+Weakness
+
+
+Grub Hub group orders - already implemented
+Store version of group orders
+New, unknown limited initial roll-out
+
+
+
+
+	O
+Opportunities 
+Opportunity to go big
+Ability to add on functionality as I learn more about other APIs and development
+Opportunity to test it and if it works - spread by work of mouth
+
+
+
+
+
+
+	T
+Threats 
+I am inexperienced
+Time constraints to develop it fully
+Programming bugs
