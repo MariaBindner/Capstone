@@ -1,9 +1,48 @@
-<mxfile host="app.diagrams.net" modified="2024-02-12T21:55:08.129Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36" version="23.1.2" etag="lOyLiiueiqFHWMCkXCQT" type="github">
+<mxfile host="app.diagrams.net" modified="2024-02-12T22:01:44.547Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36" etag="9BKtJtOa4Vk4QeTay-Zs" version="23.1.2" type="github">
   <diagram name="Page-1" id="WPe58vhT4Zk11VPb7mSO">
-    <mxGraphModel>
+    <mxGraphModel dx="992" dy="500" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="vVsszgIf2uVEAb8a69zq-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="vVsszgIf2uVEAb8a69zq-1" target="vVsszgIf2uVEAb8a69zq-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vVsszgIf2uVEAb8a69zq-1" value="Main Interface" style="whiteSpace=wrap;html=1;aspect=fixed;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="vVsszgIf2uVEAb8a69zq-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="vVsszgIf2uVEAb8a69zq-2" target="vVsszgIf2uVEAb8a69zq-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vVsszgIf2uVEAb8a69zq-2" value="Enter Event Name and Details" style="whiteSpace=wrap;html=1;aspect=fixed;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="140" y="40" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="vVsszgIf2uVEAb8a69zq-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="vVsszgIf2uVEAb8a69zq-3" target="vVsszgIf2uVEAb8a69zq-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vVsszgIf2uVEAb8a69zq-3" value="Enter participant email addresses" style="whiteSpace=wrap;html=1;aspect=fixed;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="240" y="40" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="vVsszgIf2uVEAb8a69zq-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="vVsszgIf2uVEAb8a69zq-4" target="vVsszgIf2uVEAb8a69zq-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vVsszgIf2uVEAb8a69zq-4" value="Send daily report so planner and optional to&amp;nbsp; reminders" style="whiteSpace=wrap;html=1;aspect=fixed;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="340" y="40" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="vVsszgIf2uVEAb8a69zq-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="vVsszgIf2uVEAb8a69zq-5" target="vVsszgIf2uVEAb8a69zq-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vVsszgIf2uVEAb8a69zq-5" value="Due date order review" style="whiteSpace=wrap;html=1;aspect=fixed;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="440" y="40" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="vVsszgIf2uVEAb8a69zq-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="vVsszgIf2uVEAb8a69zq-6" target="vVsszgIf2uVEAb8a69zq-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vVsszgIf2uVEAb8a69zq-6" value="Submit order to restaurant" style="whiteSpace=wrap;html=1;aspect=fixed;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="530" y="40" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="vVsszgIf2uVEAb8a69zq-7" value="Add order to historical data&amp;nbsp;" style="whiteSpace=wrap;html=1;aspect=fixed;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="40" y="150" width="80" height="80" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
