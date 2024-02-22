@@ -1,0 +1,77 @@
+MARIA D. BINDNER
+314.610.7635
+maria.bindner@gmail.com
+https://github.com/MariaBindner
+Current Location:  Manchester, MO
+
+Professional Summary
+An enthusiastic and self-managing developer with a penchant for detail along with an understanding of JavaScript, HTML, CSS, MongoDB, Netlify, SQL, and NoSQL, Insomnia, React, and Express. Utilize Git/Github for version control, develops and consumes RESTful API’s, tests JavaScript with Jasmine.  Collaborates with other developers to ensure the best possible user experience.  Experience in a fast-paced environment, learns quickly, and shows persistence in getting the code working correctly.  Thrives in an Agile environment and utilizes Jira for work tracking.  Is passionate about developing applications!
+Technical Skills
+JavaScript, HTML, CSS, Node, Express, MongoDB, Axios, Navigo, Restful APIs/using Insomnia to test, Visual Studio Code, Markdown, Git, GitHub, UI/UX, Jira, Agile, SPA’s, CRUD Operations, Deploying to Netlify and Render.com, and Jasmine for Unit Testing
+Technical Skills Used for Capstone Project
+
+•	Product Planning – Built a Single Page Application (SPA) from idea to deployment
+•	Created User Story Map using Mural.co and User Flow Chart
+•	Created wireframes for each page of my application
+•	Did extensive research to make sure my SPA was different and competitive to the user's needs 
+•	Completed User Acceptance Testing (UAT) with end users to gain feedback on performance and functionality
+•	Completed SWOT analysis to determine strengths, weaknesses, opportunities, and threats for my application
+•	Determined color pallet, fonts, icons, and navigation for my application 
+•	Utilized web technologies including Markdown, HTML, CSS to create and document a responsive website  
+•	Built website infrastructure introducing interactivity with JavaScript using DOM manipulation and data handling  
+•	Converted static web pages to a modern Single Page Application (SPA) with full routing, views    
+•	Implemented standardized testing and QA practices by utilizing Jasmine testing suites for automation of Unit Testing and Cypress for automation of Front End and End to End testing in a manner consistent with CICD pipelines
+•	Created a Node.js Express REST API server to manage long-term data storage via MongoDB Atlas and testing it with Insomnia REST Client
+•	Integrated with a third-party REST API to populate views including requesting and using the Bearer token credentials
+
+
+Continuing Education 
+
+Savvy Coders Full Stack Web Development Boot Camp – 2024
+Agile Certification through ICAgile – 2024
+
+Savvy graduates receive an Agile Fundamentals Certification. They have demonstrated their understanding of the Agile/Scrum Methodology by working in a Scrum simulated technical environment and presenting a final Capstone Project that embodies the Agile methodology, product planning, development, and deployment to a cloud-based service.  The students work in Jira, create user story maps in Mural.co, create user stories with acceptance criteria, time estimation using progressive elaboration and assigning story points, manage tasks and contributions to sprints in Jira. They work in Agile teams to plan Sprints, hold daily Scrum meetings, conduct backlog grooming sessions, sprint reviews, sprint retrospectives and sprint planning. They work on selected user stories and keep communication flowing to ensure everyone is on the same page for the next increment of work.  All project tracking is done in Jira.
+
+Education 
+ 
+Webster University, St. Louis, MO. B.A. in English Literature / Language with an Emphasis in Writing as a Profession 
+Work History
+TechnoSmarts, Inc.							May 2023 – Present
+Human Resources Coordinator
+
+•	Work closely with recruiters and create and send offer letters, contracts, I-9 etc., using SignNow software.
+•	Format and update candidate’s resumes to be compatible with the application tracking system (ATS).
+•	Add and update jobs descriptions on commercial job boards and company web site using PC Recruiter.
+•	Kick off Background check and drug screens for new hires using VerifyFirst.
+•	HR Coordinator point of contact for new hires and includes reaching out to new hires via calls, email, text and meeting scheduling.
+•	Create weekly HR reports (ppt and .xls).
+•	Manage group events.
+•	Execute all tasks necessary to onboard and exit an employee. 
+•	Manage other projects such as creating communications, including announcements; manage: rosters, employee contact lists, PTO calendars, periodic or special report analysis, annual projects such as developing succession planning review materials, talent review materials, auditing reports.
+
+
+
+
+
+Eastman Performance Films, LLC					January 2015 – May 2023
+Senior Executive Assistant to President, Films and General Manager						 
+•	Support multiple members of senior leadership including President and General Manager, Vice President, General Counsel, Directors and others that are headquartered domestic or in a global region (Europe, the Middle East, and Africa (EMEA); Asia Pacific (AP); North America (NA) and Latin America (LA)
+•	Partner with General Manager regularly to ensure to we are aligned on priorities and to ensure the office environment is running efficiently and safely
+•	Schedule and attend leadership team meeting and compile meeting minutes; take attendance, kick off team’s meetings; “drive” ppts; introduce guests, timekeeper in meetings
+•	Facilitate and manage meetings, logistics, create agendas; create ppt presentations; update scorecard; run reports ahead of the meeting to incorporate current data
+•	Plan, prioritize and organize diverse workload; conduct research for various projects; manage calendars; gatekeeper and manage GM’s time
+•	Meet 1:1 w/directors scheduled as needed to respect team members’ time 
+•	Maintain high level on confidentiality and use sound judgement in all interactions and correspondence
+•	Responsible for accurate and timely visa requests, passport applications and renewals
+•	Serve as trusted liaison between employee and management; share when recognition is in order; share ideas to increase employee engagement, drive job satisfaction and implement diversity and inclusion strategies
+•	Recommend process improvements to drive efficiency and Implement change 
+•	Uphold safety standards; work with building management when safety concern is observed or reported; ensure concerns are addressed in a timely manner; work with HSES rep to ensure we are safety compliant
+•	Liaison with facilities rep for upkeep and organization and employee canteen areas, supplies, etc.
+•	Work cross-functionally with global team members to collaborate on tasks, projects, meetings, etc.,
+•	Lead, plan, execute small/large on/offsite/online meetings such as townhalls for org; sales meetings; vendor visits, plan accommodations and create communications of events including agenda, process registration, plan catering, entertainment, negotiate venue contracts, welcome guests; lead debrief meetings post event
+•	Manage dealer contracts to ensure all parties signed, pages initialed, no strikeouts and uploaded into legal repository; run reports for expirations and proactively engage
+•	MyLearningLab Training Coordinator for Films global; Assigned, removed training courses 
+•	Manage requisitions; code and process vendor payments; prepare and submit expense reports and corporate purchasing card expenses; liaise between vendors and AP
+•	Timekeeper back up; back up for other assistants
+•	Keep up with new technology, apps, programs, shortcuts, formulas etc., to drive personal efficiencies
+•	Site Subject Matter Expert (SME)
