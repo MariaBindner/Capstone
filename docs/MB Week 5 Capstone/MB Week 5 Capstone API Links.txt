@@ -7,4 +7,4 @@ MB Week 5 Capstone API Links
 [API - link to data pipelines] (https://customer.io/docs/api/ )
 
 
-[API - link to customm eats] (https://www.customeatsmeals.com/menu/)
+[API - link to custom eats] (https://www.customeatsmeals.com/menu/)
