@@ -1,6 +1,7 @@
 import html from "html-literal";
 
-export default () => html`
-
-`<header>Capstone HTML</header>`;
+export default state => html`
+  <header>
+    <h1>${state.header}</h1>
+  </header>
 `;
