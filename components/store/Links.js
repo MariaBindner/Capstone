@@ -6,5 +6,6 @@ export default [
   { title: "Ordersubmission", text: "Order" },
   { title: "History", text: "History" },
   { title: "Updates", text: "Updates" },
-  { title: "Bio", text: "Bio" }
+  { title: "Bio", text: "Bio" },
+  { title: "Menu", text: "Menu" }
 ];

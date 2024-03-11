@@ -24,15 +24,13 @@ export default links => html`
 
 // export default () => html`
 //   <nav>
-//     <main>
 //       <p>
 //         Today I am starting my first html document to help me frame my capstone.
 //         There is lot of work left to do, but I enjoy this part a lot. I
 //         appreciate how html automatically adds the end tags, unlike JS.
 //         Research, decisions, styling and further learning awaits me!
 //       </p>
-//     </main>
-
+//
 //     <a
 //       href="https://github.com/savvy-coders/sc-curriculum/blob/master/Section04/Activities/4.1-Activities/4.1.2-Activity/index.md"
 //       >HTML4.1.2homework</a
