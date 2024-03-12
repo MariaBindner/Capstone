@@ -1,5 +1,5 @@
 import html from "html-literal";
-import Maria_IMG from ".../.../docs/img/Maria_IMG.png";
+import Maria_IMG from "../../docs/img/Maria_IMG.png";
 
 export default () => html`
   <section id="bio">

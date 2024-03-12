@@ -1,5 +1,5 @@
 import html from "html-literal";
-import Maria_IMG from ".../.../docs/img/404.png";
+import Maria_IMG from "../../docs/img/404.png";
 
 export default () => {
   console.log("Hello from my view");

@@ -1,4 +1,4 @@
-import { Header, Nav, Main, Footer } from "./components";
+import { Header, Nav, Main, Menu, Footer } from "./components";
 import * as store from "./store";
 import Navigo from "navigo";
 import { capitalize } from "lodash";
@@ -11,6 +11,7 @@ function render(state = store.Home) {
       ${Header(state)}
       ${Nav(store.Links)}
       ${Main(state)}
+      ${Menu(state)}
       ${Footer()}
     `;
   router.updatePageLinks();
