@@ -38,7 +38,7 @@ export default () => html`
     id="id_of_checkbox1"
     class="items1"
     name="condiments"
-    value="Onion" "Jalapenos" "Mustard" "Catsup" "Mayo" "Bacon Bits"
+    value="Onion"
   />
   <label for="cond1">onion</label>
         <input
@@ -150,6 +150,20 @@ export default () => html`
         />
         <label for="sprink3">cayenne</label>
 </div>
+
+<div>
+        <label for="name">Name:</label>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          placeholder="Enter name for this order e.g., Mike G or Samantha F
+          "
+          required
+        />
+      </div>
+
+
 <div>
         <label for="allergies">Allergies:</label>
         <input
@@ -160,6 +174,16 @@ export default () => html`
           required
         />
       </div>
+      <div>
+        <label for="notes">Notes:</label>
+        <input
+          type="text"
+          name="notes"
+          id="notes"
+          placeholder="Notes"
+          />
+      </div>
+
 
 <input
   type="hidden"
