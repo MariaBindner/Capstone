@@ -7,6 +7,8 @@ import Ordersubmission from "./routers/Ordersubmission.js";
 // Load environment variables from .env file
 dotenv.config();
 
+const PORT = process.env.PORT || 4040;
+
 mongoose.connect(process.env.MONGODB, {
   // Configuration options to remove deprecation warnings, just include them to remove clutter
   useNewUrlParser: true,
@@ -101,4 +103,4 @@ app.get("/weather/:city", (request, response) => {
 app.use("/Ordersubmission", Ordersubmission);
 // Tell the Express app to start listening
 // Let the humans know I am running and listening on 4040
-app.listen(4040, () => console.log("Listening on port 4040"));
+app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
