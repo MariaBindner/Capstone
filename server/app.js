@@ -7,6 +7,7 @@ import Ordersubmission from "./routers/Ordersubmission.js";
 // Load environment variables from .env file
 dotenv.config();
 
+// Connect to mongodb atlas server
 mongoose.connect(process.env.MONGODB, {
   // Configuration options to remove deprecation warnings, just include them to remove clutter
   useNewUrlParser: true,
@@ -15,16 +16,25 @@ mongoose.connect(process.env.MONGODB, {
 
 const db = mongoose.connection;
 
-const PORT = process.env.PORT || 4040;
-
 db.on("error", console.error.bind(console, "Connection Error:"));
 db.once(
   "open",
   console.log.bind(console, "Successfully opened connection to Mongo!")
 );
 
+// get the PORT from the environment variables, OR use 4040 as default
+const PORT = process.env.PORT || 4040;
+
 // Initialize the Express application
 const app = express();
+
+function checkApiKey(request, response, next) {
+  if ("apiKey" in request.query && request.query.apiKey.length > 0) {
+    next();
+  } else {
+    response.status(401).json({ message: "Unauthorized" });
+  }
+}
 
 const logging = (request, response, next) => {
   console.log(
@@ -34,11 +44,15 @@ const logging = (request, response, next) => {
 };
 
 // CORS Middleware
-const cors = (req, res, next) => {
+const cors = (request, response, next) => {
   res.setHeader(
     "Access-Control-Allow-Headers",
     "X-Requested-With,content-type, Accept,Authorization,Origin"
   );
+  // if you wanted to not have "*" in the origin
+  // and instead return the original URL
+  // const url = request.get("host");
+  // response.setHeader("Access-Control-Allow-Origin", `${url}`);
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader(
     "Access-Control-Allow-Methods",
@@ -49,8 +63,22 @@ const cors = (req, res, next) => {
 };
 
 app.use(cors);
+// app.use(checkApiKey);
 app.use(express.json());
 app.use(logging);
+app.get("/", (request, response) => {
+  response.json({
+    hours: {
+      monday: "Closed",
+      tuesday: "10am-8pm",
+      wednesday: "10am-8pm",
+      thursday: "10am-8pm",
+      friday: "10am-10pm",
+      saturday: "10am-12am",
+      sunday: "10am-6pm"
+    }
+  });
+});
 
 // Handle the request with HTTP GET method from http://localhost:4040/status
 app.get("/status", (request, response) => {

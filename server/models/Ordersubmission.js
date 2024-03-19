@@ -9,7 +9,7 @@ const ordersubmissionSchema = new mongoose.Schema({
   bread: {
     type: String,
     required: true,
-    enum: ["regular-burger-bun", "no-bread-lettuce-wrap", "skinny-bread"]
+    enum: ["regular-burger-bun", "no-bread-lettuce-wrap", "skinny-bread"],
   },
   cheese: {
     type: String,
@@ -21,13 +21,13 @@ const ordersubmissionSchema = new mongoose.Schema({
     validate: /^[A-Za-z0-9 ]*$/
   },
   condiments: [String]
-  sprinkles: [string]
-  name: [string]
-  allergies: [string]
-  notes: [string]
-  order: { type: mongoose.Schema.Types.ObjectId, ref: "Ordersubmission" }
+  sprinkles: [String]
+  name: [String]
+  allergies: [String]
+  notes: [String]
+
 });
 
-const Ordersubmission = mongoose.model("Ordersubmission", ordersubmissionSchema);
+const Ordersubmission = mongoose.model("Ordersubmission", OrdersubmissionSchema);
 
 export default Ordersubmission;
