@@ -7,8 +7,6 @@ import Ordersubmission from "./routers/Ordersubmission.js";
 // Load environment variables from .env file
 dotenv.config();
 
-const PORT = process.env.PORT || 4040;
-
 mongoose.connect(process.env.MONGODB, {
   // Configuration options to remove deprecation warnings, just include them to remove clutter
   useNewUrlParser: true,
@@ -16,6 +14,8 @@ mongoose.connect(process.env.MONGODB, {
 });
 
 const db = mongoose.connection;
+
+const PORT = process.env.PORT || 4040;
 
 db.on("error", console.error.bind(console, "Connection Error:"));
 db.once(
