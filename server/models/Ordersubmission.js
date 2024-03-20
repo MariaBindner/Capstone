@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const ordersubmissionSchema = new mongoose.Schema({
+const OrdersubmissionSchema = new mongoose.Schema({
   customer: {
     type: String,
     required: true,
@@ -9,7 +9,7 @@ const ordersubmissionSchema = new mongoose.Schema({
   bread: {
     type: String,
     required: true,
-    enum: ["regular-burger-bun", "no-bread-lettuce-wrap", "skinny-bread"],
+    enum: ["regular-burger-bun", "no-bread-lettuce-wrap", "skinny-bread"]
   },
   cheese: {
     type: String,
@@ -20,14 +20,16 @@ const ordersubmissionSchema = new mongoose.Schema({
     required: true,
     validate: /^[A-Za-z0-9 ]*$/
   },
-  condiments: [String]
-  sprinkles: [String]
-  name: [String]
-  allergies: [String]
+  condiments: [String],
+  sprinkles: [String],
+  name: [String],
+  allergies: [String],
   notes: [String]
-
 });
 
-const Ordersubmission = mongoose.model("Ordersubmission", OrdersubmissionSchema);
+const Ordersubmission = mongoose.model(
+  "Ordersubmission",
+  OrdersubmissionSchema
+);
 
 export default Ordersubmission;

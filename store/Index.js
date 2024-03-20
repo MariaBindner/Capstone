@@ -7,3 +7,5 @@ export { default as Ordersubmission } from "./Ordersubmission";
 export { default as Updates } from "./Updates";
 export { default as Viewnotfound } from "./Viewnotfound";
 export { default as Links } from "./Links";
+export { default as Footer } from "./Footer";
+export { default as Menu } from "./Menu";

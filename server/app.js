@@ -1,8 +1,9 @@
 // 'Import' the Express module instead of http
 import express from "express";
-import mongoose from "mongoose";
 import dotenv from "dotenv";
+import mongoose from "mongoose";
 import Ordersubmission from "./routers/Ordersubmission.js";
+import crusts from "./routers/crusts.js";
 
 // Load environment variables from .env file
 dotenv.config();
@@ -45,7 +46,7 @@ const logging = (request, response, next) => {
 
 // CORS Middleware
 const cors = (request, response, next) => {
-  res.setHeader(
+  response.setHeader(
     "Access-Control-Allow-Headers",
     "X-Requested-With,content-type, Accept,Authorization,Origin"
   );
@@ -53,12 +54,12 @@ const cors = (request, response, next) => {
   // and instead return the original URL
   // const url = request.get("host");
   // response.setHeader("Access-Control-Allow-Origin", `${url}`);
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader(
+  response.setHeader("Access-Control-Allow-Origin", "*");
+  response.setHeader(
     "Access-Control-Allow-Methods",
     "GET, POST, OPTIONS, PUT, PATCH, DELETE"
   );
-  res.setHeader("Access-Control-Allow-Credentials", true);
+  response.setHeader("Access-Control-Allow-Credentials", true);
   next();
 };
 
@@ -66,6 +67,7 @@ app.use(cors);
 // app.use(checkApiKey);
 app.use(express.json());
 app.use(logging);
+
 app.get("/", (request, response) => {
   response.json({
     hours: {
@@ -85,7 +87,7 @@ app.get("/status", (request, response) => {
   // Create the headers for response by default 200
   // Create the response body
   // End and return the response
-  response.send(JSON.stringify({ message: "Service healthy" }));
+  response.json({ message: "Service healthy" });
 });
 
 // Handle the request with HTTP GET method with query parameters and a url parameter
@@ -129,6 +131,7 @@ app.get("/weather/:city", (request, response) => {
 });
 
 app.use("/Ordersubmission", Ordersubmission);
+
 // Tell the Express app to start listening
 // Let the humans know I am running and listening on 4040
 app.listen(PORT, () => console.log(`Listening on port ${PORT}`));

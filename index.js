@@ -1,43 +1,149 @@
-import { Header, Nav, Main, Menu, Footer } from "./components";
+import { Header, Nav, Main, Footer } from "./components";
 import * as store from "./store";
 import Navigo from "navigo";
 import { capitalize } from "lodash";
 import axios from "axios";
-// router
+
 const router = new Navigo("/");
-// render
+
 function render(state = store.Home) {
   document.querySelector("#root").innerHTML = `
       ${Header(state)}
       ${Nav(store.Links)}
       ${Main(state)}
-      ${Menu(state)}
-      ${Footer()}
+      ${Footer(store.Footer)}
     `;
   router.updatePageLinks();
-  afterRender();
+  afterRender(state);
 }
-function afterRender() {
+
+function afterRender(state) {
   // add menu toggle to bars icon in nav bar
   document.querySelector(".fa-bars").addEventListener("click", () => {
     document.querySelector("nav > ul").classList.toggle("hidden--mobile");
   });
+
+  if (state.view === "Order") {
+    // Add an event handler for the submit button on the form
+    document.querySelector("form").addEventListener("submit", event => {
+      event.preventDefault();
+
+      // Get the form element
+      const inputList = event.target.elements;
+      // console.log("Input Element List", inputList);
+
+      // Create an empty array to hold the toppings
+      const toppings = [];
+
+      // // Iterate over the toppings array
+
+      for (let input of inputList.toppings) {
+        // If the value of the checked attribute is true then add the value to the toppings array
+        if (input.checked) {
+          toppings.push(input.value);
+        }
+      }
+
+      // Create a request body object to send to the API
+      const requestData = {
+        customer: inputList.customer.value,
+        crust: inputList.crust.value,
+        cheese: inputList.cheese.value,
+        sauce: inputList.sauce.value,
+        toppings: toppings
+      };
+      // // Log the request body to the console
+      console.log("request Body", requestData);
+
+      axios
+        // Make a POST request to the API to create a new pizza
+        .post(`${process.env.PIZZA_PLACE_API_URL}/pizzas`, requestData)
+        .then(response => {
+          //  Then push the new pizza onto the Pizza state pizzas attribute, so it can be displayed in the pizza list
+          store.Pizza.pizzas.push(response.data);
+          router.navigate("/Pizza");
+        })
+        // If there is an error log it to the console
+        .catch(error => {
+          console.log("It puked", error);
+        });
+    });
+  }
+
+  if (state.view === "Pizza") {
+    document
+      .getElementById("search-button")
+      .addEventListener("click", event => {
+        event.preventDefault();
+
+        const column = document.getElementById("column").value;
+        const filter = document.getElementById("filter").value;
+
+        axios
+          .get(
+            `${process.env.ORDER_UP_API_URL}/Ordersubmission?${column}=${filter}`
+          )
+          .then(response => {
+            // We need to store the response to the state, in the next step but in the meantime let's see what it looks like so that we know what to store from the response.
+            store.Ordersubmission.ordersubmissions = response.data;
+            router.navigate("/pizza");
+          })
+          .catch(error => {
+            console.log("It puked", error);
+          });
+      });
+
+    Array.from(document.getElementsByClassName("delete")).forEach(button => {
+      button.addEventListener("click", event => {
+        event.preventDefault();
+
+        const ordersubmissionId = event.target.dataset.id;
+        const OrdersubmissionIndex = event.target.dataset.index;
+
+        if (
+          confirm(
+            `Are you sure you want to delete ordersubmission ${ordersubmissionId}?`
+          )
+        ) {
+          axios
+            .delete(
+              `${process.env.ORDER_UP_API_URL}/ordersubmission/${ordersubmissionIdId}`
+            )
+            .then(response => {
+              // We need to store the response to the state, in the next step but in the meantime let's see what it looks like so that we know what to store from the response.
+              store.Ordersubmission.ordersubmissions.splice(
+                OrdersubmissionIndex,
+                1
+              );
+              router.navigate("/ordersubmission");
+            })
+            .catch(error => {
+              console.log("It puked", error);
+            });
+        }
+      });
+    });
+  }
 }
 
 router.hooks({
   before: (done, params) => {
     // We need to know what view we are on to know what data to fetch
-    const view =
-      params && params.data && params.data.view
-        ? capitalize(params.data.view)
-        : "Home";
+    // const view = params && params.data && params.data.view ? capitalize(params.data.view) : "Home";
+    let view = "Home";
+    if (params && params.data && params.data.view) {
+      view = capitalize(params.data.view);
+    }
+
     // Add a switch case statement to handle multiple routes
     switch (view) {
+      // Add a case for each view that needs data from an API
       case "Home":
         axios
           .get(
-            `https://api.openweathermap.org/data/2.5/weather?APPID=${process.env.OPEN_WEATHER_MAP_API_CAPSTONE_KEY}&q=st. louis`
-          )
+            `https://api.openweathermap.org/data/2.5/weather?APPID=${process.env.OPEN_WEATHER_MAP_API_KEY}&q=st. louis`
+          //'https://calendarific.com/api/v2?APPID=${
+            )
           .then(response => {
             console.log(response);
             // Convert Kelvin to Fahrenheit since OpenWeatherMap does provide otherwise
@@ -54,26 +160,31 @@ router.hooks({
             done();
           });
         break;
-      // Add a case for each view that needs data from an API
-      case "Event":
+      case "Ordersubmission":
         // New Axios get request utilizing already made environment variable
         axios
-          .get(`${process.env.Event_API_URL}/events`)
+          .get(`${process.env.ORDER_UP_API_URL}/ordersubmissions`)
           .then(response => {
             // We need to store the response to the state, in the next step but in the meantime let's see what it looks like so that we know what to store from the response.
             console.log("response", response);
+            console.log("response data", response.data);
 
-            store.Event.events = response.data;
+            store.Ordersubmission.ordersubmissions = response.data;
 
             done();
           })
           .catch(error => {
-            console.log("Uh Oh", error);
+            console.log("It puked", error);
             done();
           });
         break;
+      case "Menu":
+        // Do stuff here
+        done();
+        break;
       default:
         done();
+        break;
     }
   },
   already: params => {
@@ -91,6 +202,7 @@ router
     "/": () => render(),
     ":view": params => {
       let view = capitalize(params.data.view);
+
       if (view in store) {
         render(store[view]);
       } else {
@@ -100,8 +212,3 @@ router
     }
   })
   .resolve();
-
-// add menu toggle to bars icon in nav bar
-// document.querySelector(".fa-bars").addEventListener("click", () => {
-//   document.querySelector("nav > ul").classList.toggle("hidden--mobile");
-// });
