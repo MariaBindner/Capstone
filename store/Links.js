@@ -3,7 +3,7 @@ export default [
   { title: "Event", text: "Event" },
   { title: "Groupemail", text: "Group Email" },
   { title: "History", text: "History" },
-  { title: "Holidays", text: "Holidays },
+  { title: "Holidays", text: "Holidays" },
   { title: "Home", text: "Home" },
   { title: "Menu", text: "Menu" },
   { title: "Ordersubmission", text: "Order Submission" },
