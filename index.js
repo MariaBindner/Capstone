@@ -33,35 +33,64 @@ function afterRender(state) {
       // console.log("Input Element List", inputList);
 
       // Create an empty array to hold the toppings
-      const toppings = [];
+      const condiments = [];
 
-      // // Iterate over the toppings array
-
-      for (let input of inputList.toppings) {
+      for (let input of inputList.condiments) {
         // If the value of the checked attribute is true then add the value to the toppings array
         if (input.checked) {
-          toppings.push(input.value);
+          condiments.push(input.value);
         }
       }
 
+      for (let input of inputList.bread) {
+        // If the value of the checked attribute is true then add the value to the toppings array
+        if (input.checked) {
+          bread.push(input.value);
+        }
+      }
+
+      for (let input of inputList.cheese) {
+        // If the value of the checked attribute is true then add the value to the toppings array
+        if (input.checked) {
+          cheese.push(input.value);
+        }
+      }
+
+      for (let input of inputList.protein) {
+        // If the value of the checked attribute is true then add the value to the toppings array
+        if (input.checked) {
+          protein.push(input.value);
+        }
+      }
+
+      const sprinkles = [];
+      for (let input of inputList.sprinkles) {
+        // If the value of the checked attribute is true then add the value to the toppings array
+        if (input.checked) {
+          sprinkles.push(input.value);
+        }
+      }
       // Create a request body object to send to the API
       const requestData = {
         customer: inputList.customer.value,
-        crust: inputList.crust.value,
-        cheese: inputList.cheese.value,
-        sauce: inputList.sauce.value,
-        toppings: toppings
+        bread: bread,
+        cheese: cheese,
+        protein: protein,
+        condiments: condiments,
+        sprinkles: sprinkles,
+        allergies: inputList.customer.value,
+        notes: inputList.customer.value
       };
       // // Log the request body to the console
       console.log("request Body", requestData);
 
       axios
         // Make a POST request to the API to create a new pizza
-        .post(`${process.env.PIZZA_PLACE_API_URL}/pizzas`, requestData)
+        .post(`${process.env.ORDER_UP_API_URL}/Ordersubmission`, requestData)
         .then(response => {
           //  Then push the new pizza onto the Pizza state pizzas attribute, so it can be displayed in the pizza list
-          store.Pizza.pizzas.push(response.data);
-          router.navigate("/Pizza");
+          store.Ordersubmission.ordersubmissions.push(response.data);
+          router.navigate("/Ordersubmission");
         })
         // If there is an error log it to the console
         .catch(error => {
@@ -70,7 +99,7 @@ function afterRender(state) {
     });
   }
 
-  if (state.view === "Pizza") {
+  if (state.view === "Ordersubmission") {
     document
       .getElementById("search-button")
       .addEventListener("click", event => {
@@ -86,7 +115,7 @@ function afterRender(state) {
           .then(response => {
             // We need to store the response to the state, in the next step but in the meantime let's see what it looks like so that we know what to store from the response.
             store.Ordersubmission.ordersubmissions = response.data;
-            router.navigate("/pizza");
+            router.navigate("/Ordersubmission");
           })
           .catch(error => {
             console.log("It puked", error);
@@ -97,17 +126,17 @@ function afterRender(state) {
       button.addEventListener("click", event => {
         event.preventDefault();
 
-        const ordersubmissionId = event.target.dataset.id;
+        const OrdersubmissionId = event.target.dataset.id;
         const OrdersubmissionIndex = event.target.dataset.index;
 
         if (
           confirm(
-            `Are you sure you want to delete ordersubmission ${ordersubmissionId}?`
+            `Are you sure you want to delete Ordersubmission ${OrdersubmissionId}?`
           )
         ) {
           axios
             .delete(
-              `${process.env.ORDER_UP_API_URL}/ordersubmission/${ordersubmissionIdId}`
+              `${process.env.ORDER_UP_API_URL}/Ordersubmission/${OrdersubmissionIdId}`
             )
             .then(response => {
               // We need to store the response to the state, in the next step but in the meantime let's see what it looks like so that we know what to store from the response.
@@ -115,7 +144,7 @@ function afterRender(state) {
                 OrdersubmissionIndex,
                 1
               );
-              router.navigate("/ordersubmission");
+              router.navigate("/Ordersubmission");
             })
             .catch(error => {
               console.log("It puked", error);
@@ -139,26 +168,26 @@ router.hooks({
     switch (view) {
       // Add a case for each view that needs data from an API
       case "Home":
-        axios
-          .get(
-            `https://api.openweathermap.org/data/2.5/weather?APPID=${process.env.OPEN_WEATHER_MAP_API_KEY}&q=st. louis`
-          //'https://calendarific.com/api/v2?APPID=${
-            )
-          .then(response => {
-            console.log(response);
-            // Convert Kelvin to Fahrenheit since OpenWeatherMap does provide otherwise
-            const kelvinToFahrenheit = kelvinTemp =>
-              Math.round((kelvinTemp - 273.15) * (9 / 5) + 32);
+        // axios
+        //   .get(
+        //     `https://api.openweathermap.org/data/2.5/weather?APPID=${process.env.OPEN_WEATHER_MAP_API_KEY}&q=st. louis`
+        //     //'https://calendarific.com/api/v2?APPID=${
+        //   )
+        //   .then(response => {
+        //     console.log(response);
+        //     // Convert Kelvin to Fahrenheit since OpenWeatherMap does provide otherwise
+        //     const kelvinToFahrenheit = kelvinTemp =>
+        //       Math.round((kelvinTemp - 273.15) * (9 / 5) + 32);
 
-            // Create an object to be stored in the Home state from the response
-            store.Home.weather = {
-              city: response.data.name,
-              temp: kelvinToFahrenheit(response.data.main.temp),
-              feelsLike: kelvinToFahrenheit(response.data.main.feels_like),
-              description: response.data.weather[0].main
-            };
-            done();
-          });
+        //     // Create an object to be stored in the Home state from the response
+        //     store.Home.weather = {
+        //       city: response.data.name,
+        //       temp: kelvinToFahrenheit(response.data.main.temp),
+        //       feelsLike: kelvinToFahrenheit(response.data.main.feels_like),
+        //       description: response.data.weather[0].main
+        //     };
+        //     done();
+        //   });
         break;
       case "Ordersubmission":
         // New Axios get request utilizing already made environment variable
@@ -169,7 +198,25 @@ router.hooks({
             console.log("response", response);
             console.log("response data", response.data);
 
-            store.Ordersubmission.ordersubmissions = response.data;
+            store.Ordersubmission.Ordersubmissions = response.data;
+
+            done();
+          })
+          .catch(error => {
+            console.log("It puked", error);
+            done();
+          });
+        break;
+      case "Holidays":
+        axios
+          .get(
+            `$https://calendarific.com/api/v2/holidays?api_key=${process.env.CALENDARIFIC_API_KEY}&country=us&year=2024`
+          )
+          .then(response => {
+            // We need to store the response to the state, in the next step but in the meantime let's see what it looks like so that we know what to store from the response.
+            console.log("response data", response.data);
+
+            store.Holidays.holidays = response.data.response.holidays;
 
             done();
           })

@@ -1,11 +1,11 @@
 export default [
-  { title: "Home", text: "Home" },
+  { title: "Bio", text: "Bio" },
   { title: "Event", text: "Event" },
-  { title: "Bio", text: "Bio" },
   { title: "Groupemail", text: "Group Email" },
-  { title: "Ordersubmission", text: "Order" },
   { title: "History", text: "History" },
-  { title: "Updates", text: "Updates" },
-  { title: "Bio", text: "Bio" },
-  { title: "Menu", text: "Menu" }
+  { title: "Holidays", text: "Holidays },
+  { title: "Home", text: "Home" },
+  { title: "Menu", text: "Menu" },
+  { title: "Ordersubmission", text: "Order Submission" },
+  { title: "Updates", text: "Updates" }
 ];
