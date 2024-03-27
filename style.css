@@ -1,5 +1,5 @@
 #jumbotron {
-  background: url("C:\Users\mdc56\Code\savvycoders\Capstone\docs\img\background.png") center center no-repeat;  background-size: cover;
+  background: url(docs/img/background.png) center center no-repeat;  background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: center;
