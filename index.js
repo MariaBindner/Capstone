@@ -167,29 +167,9 @@ router.hooks({
     // Add a switch case statement to handle multiple routes
     switch (view) {
       // Add a case for each view that needs data from an API
-      case "Home":
-        // axios
-        //   .get(
-        //     `https://api.openweathermap.org/data/2.5/weather?APPID=${process.env.OPEN_WEATHER_MAP_API_KEY}&q=st. louis`
-        //     //'https://calendarific.com/api/v2?APPID=${
-        //   )
-        //   .then(response => {
-        //     console.log(response);
-        //     // Convert Kelvin to Fahrenheit since OpenWeatherMap does provide otherwise
-        //     const kelvinToFahrenheit = kelvinTemp =>
-        //       Math.round((kelvinTemp - 273.15) * (9 / 5) + 32);
 
-        //     // Create an object to be stored in the Home state from the response
-        //     store.Home.weather = {
-        //       city: response.data.name,
-        //       temp: kelvinToFahrenheit(response.data.main.temp),
-        //       feelsLike: kelvinToFahrenheit(response.data.main.feels_like),
-        //       description: response.data.weather[0].main
-        //     };
-        //     done();
-        //   });
-        break;
       case "Ordersubmission":
+        //above is referring to referencing view called ordersubmission
         // New Axios get request utilizing already made environment variable
         axios
           .get(`${process.env.ORDER_UP_API_URL}/ordersubmissions`)
