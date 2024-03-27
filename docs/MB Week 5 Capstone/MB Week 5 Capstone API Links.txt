@@ -1,0 +1,10 @@
+MB Week 5 Capstone API Links
+
+ [API link to open menu - Matt sent it to me] (https://openmenu.com/)
+
+ [API - link that Matt shared w/me but said it might have issues] (https://stupefied-torvalds-88b3ed.netlify.app/)
+
+[API - link to data pipelines] (https://customer.io/docs/api/ )
+
+
+[API - link to custom eats] (https://www.customeatsmeals.com/menu/)
