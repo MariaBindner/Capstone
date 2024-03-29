@@ -1,5 +1,4 @@
 export default {
-  header: "My Order Submission Page",
-  view: "Ordersubmission",
-  Ordersubmission: []
+  header: "My Order Page",
+  view: "Order"
 };

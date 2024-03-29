@@ -35,6 +35,8 @@ function afterRender(state) {
       // Create an empty array to hold the toppings
       const condiments = [];
 
+      // // Iterate over the toppings array
+
       for (let input of inputList.condiments) {
         // If the value of the checked attribute is true then add the value to the toppings array
         if (input.checked) {
@@ -73,19 +75,21 @@ function afterRender(state) {
       // Create a request body object to send to the API
       const requestData = {
         customer: inputList.customer.value,
-        bread: bread,
-        cheese: cheese,
-        protein: protein,
-        condiments: condiments,
-        sprinkles: sprinkles,
-        allergies: inputList.customer.value,
-        notes: inputList.customer.value
+        bread: inputList.bread.value,
+        cheese: inputList.cheese.value,
+        protein: inputList.protein.value,
+        condiments: inputList.condiments.value,
+        sprinkles: inputList.sprinkles.value,
+        allergies: inputList.allergies.value,
+        notes: inputList.notes.value
       };
       // // Log the request body to the console
       console.log("request Body", requestData);
 
       axios
         // Make a POST request to the API to create a new pizza
+        //     .post(`${process.env.ORDER_UP_API_URL}/Ordersubmission?${column}=${filter}`)
+        //  .then(response => {
         .post(`${process.env.ORDER_UP_API_URL}/Ordersubmission`, requestData)
         .then(response => {
           //  Then push the new pizza onto the Pizza state pizzas attribute, so it can be displayed in the pizza list
@@ -94,7 +98,7 @@ function afterRender(state) {
         })
         // If there is an error log it to the console
         .catch(error => {
-          console.log("It puked", error);
+          console.log("Uh Oh!", error);
         });
     });
   }
@@ -111,6 +115,7 @@ function afterRender(state) {
         axios
           .get(
             `${process.env.ORDER_UP_API_URL}/Ordersubmission?${column}=${filter}`
+            // or .get(`${process.envORDER_UP_API_URLL}/Ordersubmissions?${column}=${filter}`)
           )
           .then(response => {
             // We need to store the response to the state, in the next step but in the meantime let's see what it looks like so that we know what to store from the response.
@@ -118,7 +123,7 @@ function afterRender(state) {
             router.navigate("/Ordersubmission");
           })
           .catch(error => {
-            console.log("It puked", error);
+            console.log("Uh oh!", error);
           });
       });
 
@@ -136,7 +141,7 @@ function afterRender(state) {
         ) {
           axios
             .delete(
-              `${process.env.ORDER_UP_API_URL}/Ordersubmission/${OrdersubmissionIdId}`
+              `${process.env.ORDER_UP_API_URL}/Ordersubmission/${OrdersubmissionId}`
             )
             .then(response => {
               // We need to store the response to the state, in the next step but in the meantime let's see what it looks like so that we know what to store from the response.
@@ -147,7 +152,7 @@ function afterRender(state) {
               router.navigate("/Ordersubmission");
             })
             .catch(error => {
-              console.log("It puked", error);
+              console.log("Uh oh!", error);
             });
         }
       });
@@ -183,7 +188,7 @@ router.hooks({
             done();
           })
           .catch(error => {
-            console.log("It puked", error);
+            console.log("Uh oh!", error);
             done();
           });
         break;
@@ -201,7 +206,7 @@ router.hooks({
             done();
           })
           .catch(error => {
-            console.log("It puked", error);
+            console.log("Uh oh!", error);
             done();
           });
         break;
