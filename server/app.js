@@ -67,7 +67,6 @@ app.use(cors);
 app.use(express.json());
 app.use(logging);
 
-
 // Handle the request with HTTP GET method from http://localhost:4040/status
 app.get("/status", (request, response) => {
   // Create the headers for response by default 200
@@ -80,11 +79,9 @@ app.get("/status", (request, response) => {
 app.get("/holidays", (request, response) => {
   // Express adds a "params" Object to requests that has an matches parameter created using the colon syntax
   const holidays = request.params.holidays;
-
 });
 
-
-app.use("/ordersubmission", ordersubmission);
+app.use("/ordersubmission", Ordersubmission);
 // app.use("/holidays", holidays);
 
 // Tell the Express app to start listening

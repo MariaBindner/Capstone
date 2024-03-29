@@ -1,4 +1,5 @@
 export default {
-  header: "My History Page",
-  view: "History"
+  header: "Order History?",
+  view: "Order HIstory",
+  Ordersubmissions: []
 };
