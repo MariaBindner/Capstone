@@ -63,6 +63,7 @@ function afterRender(state) {
       const customizations = [];
 
       const name = [];
+
       for (let input of inputList.name) {
         // If the value of the checked attribute is true then add the value to the toppings array
         if (input.checked) {
@@ -70,28 +71,29 @@ function afterRender(state) {
         }
       }
 
-      const allergies = [];
       for (let input of inputList.allergies) {
         // If the value of the checked attribute is true then add the value to the toppings array
         if (input.checked) {
           allergies.push(input.value);
         }
       }
+      const allergies = [];
 
-      const sprinkles = [];
-      for (let input of inputList.sprinkles) {
+      for (let input of inputList.notes) {
         // If the value of the checked attribute is true then add the value to the toppings array
         if (input.checked) {
           notes.push(input.value);
         }
       }
+
+      const notes = [];
       // Create a request body object to send to the API
       const requestData = {
         bread: inputList.bread.value,
         cheese: inputList.cheese.value,
         protein: inputList.protein.value,
         customizations: inputList.condiments.value,
-        name: inputList.sprinkles.value,
+        name: inputList.name.value,
         allergies: inputList.allergies.value,
         notes: inputList.notes.value
       };
