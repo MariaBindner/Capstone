@@ -8,13 +8,13 @@
 }
 
 #jumbotron > h2 {
-  color: white;
+  color:  rgba(0, 0, 0, .87);
   text-align: bottom;
 }
 
 #jumbotron > a {
   text-decoration: none;
-  background-color: white;
+  background-color:  rgba(0, 0, 0, .87);
   font-size: 1.5em;
   padding: 1.5rem;
   border-radius: 10px;
@@ -23,12 +23,15 @@
 }
 
 form {
-  border: solid 1px white;
+  border: solid 1px  color: rgba(0, 0, 0, .87);
   display: flex;
   flex-direction: column;
   margin: 1rem 1rem;
 }
 
+:root {
+  --primary-color:  rgba(0, 0, 0, .87);
+}
 form > * {
   margin: 0.5rem;
 }
@@ -40,7 +43,7 @@ form > input[type="submit"] {
 }
 
 footer {
-  border-top: solid 1px black;
+  border-top: solid 1px gray;
   padding: 2rem 2rem 4rem;
   margin: 1rem 1rem;
 }
