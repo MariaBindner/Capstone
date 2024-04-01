@@ -80,9 +80,9 @@ app.get("/holidays", (request, response) => {
   // Express adds a "params" Object to requests that has an matches parameter created using the colon syntax
   const holidays = request.params.holidays;
 });
+// app.use("/holidays", holidays);
 
 app.use("/ordersubmission", Ordersubmission);
-// app.use("/holidays", holidays);
 
 // Tell the Express app to start listening
 // Let the humans know I am running and listening on 4040

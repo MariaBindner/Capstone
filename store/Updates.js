@@ -1,4 +1,5 @@
 export default {
   header: "My Updates Page",
-  view: "Updates"
+  view: "Updates",
+  updates: []
 };

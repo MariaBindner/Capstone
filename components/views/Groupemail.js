@@ -1,30 +1,37 @@
 import html from "html-literal";
 
 export default () => html`
+
+//add summary of event details in here
+
   <section id="Groupemail">
     <form id="email" method="POST" action="">
-      <h2>Group Email</h2>
+            <h4>Enter participant details
+
+            </h4>
+
         <div>
-        <label for="firstName">First Name:</label>
+       //<label for="excludeMe">Check if not participating:</label>
+        <input
+          type="checkbox"
+          name="excludeMe"
+          id="excludeMe"
+          placeholder="excludeMe"
+          />
+      </div>
+
+      //nn to add code to submit and move to next if not participating
+        <div>
+        <label for="Name">First Name, Full Name Initials or Alias:</label>
         <input
           type="text"
-          name="firstName"
-          id="firstName"
-          placeholder="First Name"
+          name="Name"
+          id="Name"
+          placeholder="Name"
           required
         />
       </div>
 
-      <div>
-        <label for="lastName">Last Name:</label>
-        <input
-          type="text"
-          name="LastName"
-          id="LastName"
-          placeholder="Last Name"
-          required
-        />
-      </div>
       <div>
         <label for="email">Email:</label>
         <input
@@ -42,23 +49,13 @@ export default () => html`
           type="text"
           name="costCenter"
           id="costCenter"
-          required
+          placeholder="Cost Center"
+          optional
         />
-      </div>
-      <div>
-        <label for="optiontoExclude">Note if not participating:</label>
-        <input
-          type="text"
-          name="optiontoExclude"
-          id="optiontoExclude"
-          placeholder="optiontoExclude"
-          required
-        />
-      </div>
 
-    <header>
-      <h1>Group Email</h1>
-    </header>
-    <p>WIP - Group Email</p>
+
+      // need to add a loop to keep on adding email names
+      <input type="submit" name="submit" value="Send Email to All Participants" />
+
   </section>
 `;
