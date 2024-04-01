@@ -82,8 +82,8 @@ router.put("/:id", async (request, response) => {
           cheese: foobar.cheese,
           protein: foobar.protein,
           customizations: foobar.customizations,
-          name: foobar.name
-          allergies: foobar.allergies
+          name: foobar.name,
+          allergies: foobar.allergies,
           notes: foobar.notes
         }
       },
