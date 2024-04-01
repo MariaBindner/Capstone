@@ -23,7 +23,7 @@ function afterRender(state) {
     document.querySelector("nav > ul").classList.toggle("hidden--mobile");
   });
 
-  if (state.view === "Order") {
+  if (state.view === "Ordersubmission") {
     // Add an event handler for the submit button on the form
     document.querySelector("form").addEventListener("submit", event => {
       event.preventDefault();
@@ -31,18 +31,6 @@ function afterRender(state) {
       // Get the form element
       const inputList = event.target.elements;
       // console.log("Input Element List", inputList);
-
-      // Create an empty array to hold the toppings
-      const condiments = [];
-
-      // // Iterate over the toppings array
-
-      for (let input of inputList.condiments) {
-        // If the value of the checked attribute is true then add the value to the toppings array
-        if (input.checked) {
-          condiments.push(input.value);
-        }
-      }
 
       for (let input of inputList.bread) {
         // If the value of the checked attribute is true then add the value to the toppings array
@@ -64,22 +52,46 @@ function afterRender(state) {
           protein.push(input.value);
         }
       }
+      // // Iterate over the toppings array
+      for (let input of inputList.customizations) {
+        // If the value of the checked attribute is true then add the value to the toppings array
+        if (input.checked) {
+          customizations.push(input.value);
+        }
+      }
+      // Create an empty array to hold the toppings
+      const customizations = [];
+
+      const name = [];
+      for (let input of inputList.name) {
+        // If the value of the checked attribute is true then add the value to the toppings array
+        if (input.checked) {
+          name.push(input.value);
+        }
+      }
+
+      const allergies = [];
+      for (let input of inputList.allergies) {
+        // If the value of the checked attribute is true then add the value to the toppings array
+        if (input.checked) {
+          allergies.push(input.value);
+        }
+      }
 
       const sprinkles = [];
       for (let input of inputList.sprinkles) {
         // If the value of the checked attribute is true then add the value to the toppings array
         if (input.checked) {
-          sprinkles.push(input.value);
+          notes.push(input.value);
         }
       }
       // Create a request body object to send to the API
       const requestData = {
-        customer: inputList.customer.value,
         bread: inputList.bread.value,
         cheese: inputList.cheese.value,
         protein: inputList.protein.value,
-        condiments: inputList.condiments.value,
-        sprinkles: inputList.sprinkles.value,
+        customizations: inputList.condiments.value,
+        name: inputList.sprinkles.value,
         allergies: inputList.allergies.value,
         notes: inputList.notes.value
       };
@@ -195,7 +207,7 @@ router.hooks({
       case "Holidays":
         axios
           .get(
-            `https://calendarific.com/api/v2/holidays?api_key=${process.env.CALENDERIFIC_API_KEY}&country=us&year=2024&type=national`
+            `https://calendarific.com/api/v2/holidays?api_key=${process.env.CALENDERIFIC_API_KEY}&country=us&cn&year=2024&type=national`
           )
           .then(response => {
             // We need to store the response to the state, in the next step but in the meantime let's see what it looks like so that we know what to store from the response.

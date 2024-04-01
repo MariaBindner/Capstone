@@ -80,9 +80,11 @@ router.put("/:id", async (request, response) => {
         $set: {
           bread: foobar.bread,
           cheese: foobar.cheese,
-          sprinkles: foobar.sprinkles,
           protein: foobar.protein,
-          condiments: foobar.condiments
+          customizations: foobar.customizations,
+          name: foobar.name,
+          allergies: foobar.allergies,
+          notes: foobar.notes
         }
       },
       {
