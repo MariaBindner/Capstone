@@ -10,16 +10,6 @@ export default () => html`
 
             </h4>
 
-        <div>
-       //<label for="excludeMe">Check if not participating:</label>
-        <input
-          type="checkbox"
-          name="excludeMe"
-          id="excludeMe"
-          placeholder="excludeMe"
-          />
-      </div>
-
       //nn to add code to submit and move to next if not participating
         <div>
         <label for="Name">First Name, Full Name Initials or Alias:</label>
@@ -53,6 +43,25 @@ export default () => html`
           optional
         />
 
+        <div>
+      <label for="sameOrder">All Charges to One Cost Center or Department</label>
+        <input
+          type="checkbox"
+          name="sameOrder"
+          id="includeExtras"
+          placeholder="includeExtras"
+          optional
+          />
+      </div>
+      <div>
+       //<label for="excludeMe">Check if not participating:</label>
+        <input
+          type="checkbox"
+          name="excludeMe"
+          id="excludeMe"
+          placeholder="excludeMe"
+          />
+      </div>
 
       // need to add a loop to keep on adding email names
       <input type="submit" name="submit" value="Send Email to All Participants" />
