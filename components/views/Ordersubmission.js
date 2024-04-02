@@ -19,7 +19,7 @@ export default () => html`
 <div>
   <label for="cheese">Cheese:</label>
   <option id="cheese" name="cheese">
-  <option value="">cheese</option>Cheese Selection</option>
+  <option value="">Cheese Selection</option>
     <option value="american">American</option>
     <option value="cheddar">Cheddar</option>
     <option value="mozzarella">Mozzarella</option>
@@ -30,7 +30,7 @@ export default () => html`
     <div>
   <label for="protein">Protein:</label>
   <select id="protein" name="protein">
-  <option value="">protein>Select a Protein</option>
+  <option value="">Select a Protein</option>
     <option value="beef-burger">100% Angus Beef Burger</option>
     <option value="turkey-burger">Turkey Burger</option>
     <option value="fried-egg">Fried Egg</option>

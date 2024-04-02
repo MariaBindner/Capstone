@@ -1,7 +1,7 @@
 import html from "html-literal";
 
 export default state => html`
-  <section id="updates">
+  <section id="Updates">
     <div class="filter">
       <select name="column" id="column">
         <option value="">Select a column</option>
