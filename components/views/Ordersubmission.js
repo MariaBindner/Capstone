@@ -12,14 +12,14 @@ export default () => html`
   <select id="bread" name="bread">
     <option value="">Bread Selection</option>
     <option value="regular-burger-bun">Burger Bun</option>
-    <option value="no-bread-lettuce-wrap">No Bread Lettuce Wrap</option>
+    <option value="lettuce-wrap">Lettuce Wrap</option>
     <option value="herb pita">Herb Pita</option>
   </select>
 </div>
 <div>
   <label for="cheese">Cheese:</label>
-  <option id="cheese" name="cheese">
-  <option value="">cheese</option>Cheese Selection</option>
+  <select id="cheese" name="cheese">
+  <option value="">Cheese Selection</option>
     <option value="american">American</option>
     <option value="cheddar">Cheddar</option>
     <option value="mozzarella">Mozzarella</option>
@@ -30,7 +30,7 @@ export default () => html`
     <div>
   <label for="protein">Protein:</label>
   <select id="protein" name="protein">
-  <option value="">protein>Select a Protein</option>
+  <option value="">Select a Protein</option>
     <option value="beef-burger">100% Angus Beef Burger</option>
     <option value="turkey-burger">Turkey Burger</option>
     <option value="fried-egg">Fried Egg</option>
@@ -45,7 +45,7 @@ export default () => html`
     name="customizations"
     value="French's crispy fried onions"
   />
-  <label for="customizations1">French's crispy fried onions</label>
+  <label for="customizations1">French's crispy fried onions | </label>
         <input
           type="checkbox"
           id="id_of_checkbox2"
@@ -53,7 +53,7 @@ export default () => html`
           name="customizations"
           value="onion"
   />
-  <label for="customizations2">Onion</label>
+  <label for="customizations2">Onion | </label>
         <input
           type="checkbox"
           id="id_of_checkbox3"
@@ -62,7 +62,7 @@ export default () => html`
           value="lettuce"
           />
 
-  <label for="customizations3">Lettuce</label>
+  <label for="customizations3">Lettuce | </label>
   <input
     type="checkbox"
     id="id_of_checkbox4"
@@ -70,7 +70,7 @@ export default () => html`
     name="customizations"
     value="spinach"
     />
-    <label for="customizations4">Spinach</label>
+    <label for="customizations4">Spinach | </label>
         <input
           type="checkbox"
           id="id_of_checkbox5"
@@ -78,7 +78,7 @@ export default () => html`
           name="customizations"
           value="avacado"
         />
-        <label for="customizations5">Avacado</label>
+        <label for="customizations5">Avacado | </label>
         <input
           type="checkbox"
           id="id_of_checkbox6"
@@ -86,7 +86,7 @@ export default () => html`
           name="customizations"
           value="pickles"
         />
-        <label for="customizations6">Pickles</label>
+        <label for="customizations6">Pickles | </label>
         <input
           type="checkbox"
           id="id_of_checkbox7"
@@ -94,7 +94,7 @@ export default () => html`
           name="customizations"
           value="jalapenos"
         />
-        <label for="customizations7">Jalapenos</label>
+        <label for="customizations7">Jalapenos | </label>
         <input
           type="checkbox"
           id="id_of_checkbox8"
@@ -102,7 +102,7 @@ export default () => html`
           name="customizations"
           value="tomato"
           />
-        <label for="customizations8">Tomato</label>
+        <label for="customizations8">Tomato | </label>
         <input
           type="checkbox"
           id="id_of_checkbox5"
@@ -110,7 +110,7 @@ export default () => html`
           name="customizations"
           value="mustard"
           />
-        <label for="customizations9">Mustard</label>
+        <label for="customizations9">Mustard | </label>
         <input
           type="checkbox"
           id="id_of_checkbox9"
@@ -118,7 +118,7 @@ export default () => html`
           name="customizations"
           value="mayo"
         />
-        <label for="customizations10">Mayonnaise</label>
+        <label for="customizations10">Mayonnaise | </label>
         <input
           type="checkbox"
           id="id_of_checkbox10"
@@ -126,7 +126,7 @@ export default () => html`
           name="customizations"
           value="catsup"
         />
-        <label for="customizations11">Catsup</label>
+        <label for="customizations11">Catsup | </label>
         <input
           type="checkbox"
           id="id_of_checkbox11"
@@ -134,7 +134,7 @@ export default () => html`
           name="customizations"
           value="baconBits"
         />
-        <label for="customizations12">Bacon Bits</label>
+        <label for="customizations12">Bacon Bits | </label>
         <input
           type="checkbox"
           id="id_of_checkbox12"
@@ -142,7 +142,7 @@ export default () => html`
           name="customizations"
           value="basil"
         />
-        <label for="customizations13">Basil</label>
+        <label for="customizations13">Basil | </label>
         <input
           type="checkbox"
           id="id_of_checkbox5"
@@ -150,7 +150,7 @@ export default () => html`
           name="customizations"
           value="oregano"
         />
-        <label for="customizations14">Oregano</label>
+        <label for="customizations14">Oregano | </label>
         <input
           type="checkbox"
           id="id_of_checkbox5"
@@ -158,7 +158,7 @@ export default () => html`
           name="customizations"
           value="oil_and_vinegar"
         />
-        <label for="customizations15">Oil & Vinegar</label>
+        <label for="customizations15">Oil & Vinegar | </label>
         <input
           type="checkbox"
           id="id_of_checkbox5"
@@ -167,7 +167,7 @@ export default () => html`
           value="salt"
         />
         <div>
-        <label for="customizations16">Salt</label>
+        <label for="customizations16">Salt | </label>
         <input
           type="checkbox"
           id="id_of_checkbox1"
@@ -175,7 +175,7 @@ export default () => html`
           name="customizations"
           value="pepper"
         />
-        <label for="customizations17">Pepper</label>
+        <label for="customizations17">Pepper | </label>
         <input
           type="checkbox"
           id="id_of_checkbox2"
@@ -193,7 +193,7 @@ export default () => html`
           type="text"
           name="name"
           id="name"
-          placeholder="Enter name for this order e.g., Mike G or Samantha F"
+          placeholder="Enter name for this order e.g., Mike G or MG"
           required
         />
       </div>
@@ -203,7 +203,7 @@ export default () => html`
           type="text"
           name="allergies"
           id="allergies"
-          placeholder="Enter Allergies. If none, enter NA"
+          placeholder="Enter Allergies. If none, leave blank"
           required
         />
       </div>
@@ -221,7 +221,8 @@ export default () => html`
         <label for="customer">Customer</label>
         <input type="text" name="customer" id="customer" />
       </div>
-/>
+      />
+
 <input type="submit" name="submit" value="Ordersubmission" />
 </form>
 </section>

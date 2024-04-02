@@ -3,7 +3,8 @@ import html from "html-literal";
 export default state => html`
   <section id="jumbotron">
     <a href="index.html"
-      >Welcome, Let's Get Started with Your Group Order - Click Here!</a
+      >Welcome, Friend! Let's Get Started with Your Order Up Group Order - Click
+      here</a
     >
     //add route to group email
   </section>

@@ -13,6 +13,7 @@ const OrdersubmissionSchema = new mongoose.Schema({
   },
   cheese: {
     type: String,
+    required: true,
     validate: /^[A-Za-z0-9 ]*$/
   },
   protein: {
