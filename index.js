@@ -209,7 +209,7 @@ router.hooks({
       case "Holidays":
         axios
           .get(
-            `https://calendarific.com/api/v2/holidays?api_key=${process.env.CALENDERIFIC_API_KEY}&country=us&cn&year=2024&type=national`
+            `https://calendarific.com/api/v2/holidays?api_key=${process.env.CALENDERIFIC_API_KEY}&country=US&CN&GB&MX&year=2024&type=national`
           )
           .then(response => {
             // We need to store the response to the state, in the next step but in the meantime let's see what it looks like so that we know what to store from the response.
