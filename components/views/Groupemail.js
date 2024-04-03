@@ -5,7 +5,7 @@ export default () => html`
 //add summary of event details in here
 
   <section id="Groupemail">
-    <form id="email" method="POST" action="">
+    <form id="Groupemail" method="POST" action="">
             <h4>Enter participant details
 
             </h4>

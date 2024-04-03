@@ -1,7 +1,7 @@
 import html from "html-literal";
 
 export default state => html`
-  <section id="Ordersubmission">
+  <section id="History">
     <div class="filter">
       <select name="column" id="column">
         <option value="">Select a column</option>
@@ -28,30 +28,32 @@ export default state => html`
         <th>Notes</th>
         <th>Customer / Order Placer</th>
       </tr>
-      ${state.Ordersubmissions.map((Ordersubmission, index) => {
-        return html`
-          <tr id="${Ordersubmission._id}">
-            <td>${Ordersubmission.bread}</td>
-            <td>${Ordersubmission.cheese}</td>
-            <td>${Ordersubmission.protein}</td>
-            <td>${Ordersubmission.customizations}</td>
-            <td>${Ordersubmission.allergies}</td>
-            <td>${Ordersubmission.notes}</td>
-            <td>${Ordersubmission.customer}</td>
-            <td>${Ordersubmission.customizations.join(" & ")}</td>
-            <td>${Ordersubmission.name}</td>
-            <td>
-              <button
-                class="delete"
-                data-id="${Ordersubmission._id}"
-                data-index="${index}"
-              >
-                Delete
-              </button>
-            </td>
-          </tr>
-        `;
-      }).join("")}
+      ${state.ordersubmissions
+        .map((Ordersubmission, index) => {
+          return html`
+            <tr id="${Ordersubmission._id}">
+              <td>${Ordersubmission.bread}</td>
+              <td>${Ordersubmission.cheese}</td>
+              <td>${Ordersubmission.protein}</td>
+              <td>${Ordersubmission.customizations}</td>
+              <td>${Ordersubmission.allergies}</td>
+              <td>${Ordersubmission.notes}</td>
+              <td>${Ordersubmission.customer}</td>
+              <td>${Ordersubmission.customizations.join(" & ")}</td>
+              <td>${Ordersubmission.name}</td>
+              <td>
+                <button
+                  class="delete"
+                  data-id="${Ordersubmission._id}"
+                  data-index="${index}"
+                >
+                  Delete
+                </button>
+              </td>
+            </tr>
+          `;
+        })
+        .join("")}
     </table>
   </section>
 `;

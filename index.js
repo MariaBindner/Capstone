@@ -73,7 +73,7 @@ function afterRender(state) {
     });
   }
 
-  if (state.view === "History") {
+  if (state.view === "Ordersubmission") {
     document
       .getElementById("search-button")
       .addEventListener("click", event => {
@@ -85,8 +85,9 @@ function afterRender(state) {
         axios
           .get(
             `${process.env.ORDER_UP_API_URL}/Ordersubmission?${column}=${filter}`
-            // or .get(`${process.envORDER_UP_API_URLL}/Ordersubmissions?${column}=${filter}`)
           )
+          // or .get(`${process.envORDER_UP_API_URL}/Ordersubmissions?${column}=${filter}`)
+
           .then(response => {
             // We need to store the response to the state, in the next step but in the meantime let's see what it looks like so that we know what to store from the response.
             store.History.ordersubmissions = response.data;
@@ -181,15 +182,16 @@ router.hooks({
             done();
           });
         break;
-      case "Menu":
-        // Do stuff here
-        done();
-        break;
-      default:
-        done();
-        break;
+      //case "Menu":
+      // Do stuff here
+      // done();
+      // break;
+      //default:
+      //done();
+      //break;
     }
   },
+
   already: params => {
     const view =
       params && params.data && params.data.view

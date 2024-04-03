@@ -213,12 +213,13 @@ export default state => html`
         />
       </div>
       <div>
-        <label for="notes">Notes - any comments, requests, questions or anything you want us to know?:</label>
+        <label for="notes">Notes</label>
         <input
           type="text"
           name="notes"
           id="notes"
-          placeholder="Notes"
+          placeholder="-E.g., sauce on side; light mayo, etc"
+          optional
           />
       </div>
 
