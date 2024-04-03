@@ -85,7 +85,6 @@ router.put("/:id", async (request, response) => {
           name: foobar.name,
           allergies: foobar.allergies,
           notes: foobar.notes
-
         }
       },
       {

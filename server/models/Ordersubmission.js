@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 const OrdersubmissionSchema = new mongoose.Schema({
-  Customer / Order Placer: {
+  customer: {
     type: String,
     required: true,
     validate: /^[A-Za-z0-9 ]*$/
