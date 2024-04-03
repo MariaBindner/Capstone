@@ -56,7 +56,7 @@ router.get("/:id", async (request, response) => {
 
 // Remove a single pizza by ID
 router.delete("/:id", async (request, response) => {
-  // http://localhost:4040/pizzas/pizzaId
+  // http://localhost:4040/ordersubmission/OrdersubmissionId
   try {
     const data = await Ordersubmission.findByIdAndRemove(request.params.id);
 
@@ -85,6 +85,7 @@ router.put("/:id", async (request, response) => {
           name: foobar.name,
           allergies: foobar.allergies,
           notes: foobar.notes
+
         }
       },
       {

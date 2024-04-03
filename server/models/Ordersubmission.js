@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 const OrdersubmissionSchema = new mongoose.Schema({
-  customer: {
+  Customer / Order Placer: {
     type: String,
     required: true,
     validate: /^[A-Za-z0-9 ]*$/
@@ -9,25 +9,21 @@ const OrdersubmissionSchema = new mongoose.Schema({
   bread: {
     type: String,
     required: true,
-    enum: ["regular-burger-bun", "no-bread-lettuce-wrap", "skinny-bread"]
+    enum: ["regular-burger-bun", "lettuce-wrap", "skinny-bread"]
   },
   cheese: {
     type: String,
-    required: true,
-    validate: /^[A-Za-z0-9 ]*$/
+    required: true
   },
   protein: {
     type: String,
-    required: true,
-    validate: /^[A-Za-z0-9 ]*$/
+    required: true
   },
-  condiments: [String],
-  sprinkles: [String],
   name: [String],
   allergies: [String],
-  notes: [String]
+  notes: [String],
+  customizations: [String]
 });
-
 const Ordersubmission = mongoose.model(
   "Ordersubmission",
   OrdersubmissionSchema

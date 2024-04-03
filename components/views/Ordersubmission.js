@@ -1,9 +1,14 @@
 import html from "html-literal";
-
-export default () => html`
+import menuItem from "../menuItem";
+export default state => html`
 
 //Add order placer name, event details and/or menu at the top here
-
+<section id="menu">
+    <h2>Menu</h2>
+    <ul>
+      ${state.menuItems.map(item => menuItem(item)).join("")}
+    </ul>
+  </section>
 
   <section id="Ordersubmission">
   <form id="Ordersubmission" method="POST" action="">
@@ -77,9 +82,9 @@ export default () => html`
           id="id_of_checkbox5"
           class="items1"
           name="customizations"
-          value="avacado"
+          value="avocado"
         />
-        <label for="customizations5">Avacado | </label>
+        <label for="customizations5">Avocado | </label>
         <input
           type="checkbox"
           id="id_of_checkbox6"
@@ -181,10 +186,10 @@ export default () => html`
           type="checkbox"
           id="id_of_checkbox2"
           class="items1"
-          name="sprinkles"
+          name="customization"
           value="cayenne"
         />
-        <label for="18">cayenne</label>
+        <label for="18">Cayenne</label>
 </div>
 
 //may not need the section below if I am able to route the order info into this page
@@ -205,7 +210,6 @@ export default () => html`
           name="allergies"
           id="allergies"
           placeholder="Enter Allergies. If none, leave blank"
-          required
         />
       </div>
       <div>
@@ -219,7 +223,7 @@ export default () => html`
       </div>
 
       <div>
-        <label for="customer">Customer</label>
+        <label for="customer">Customer / Order Placer</label>
         <input type="text" name="customer" id="customer" />
       </div>
       />

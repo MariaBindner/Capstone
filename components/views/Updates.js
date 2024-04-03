@@ -12,6 +12,8 @@ export default state => html`
         <option value="name">Name</option>
         <option value="allergies">Allergies</option>
         <option value="notes">Notes</option>
+        <option value="emailSent">Email Sent</option>
+        <option value="status">Status</option>
       </select>
       <input type="search" name="filter" id="filter" />
       <button id="search-button">Search</button>
@@ -23,10 +25,14 @@ export default state => html`
         <th>Protein</th>
         <th>Customizations</th>
         <th>Name</th>
-        <th>Allergies</th
-        <th>Notes</th
-        <th>Actions</th
+        <th>Allergies</th>
+        <th>Notes</th>
+        <th>Email Sent</th>
+        <th>Status</th>
+        <th>Customer / Order Placer</th>
+        <th>Actions</th>
       </tr>
+
       ${state.updates
         .map((updates, index) => {
           return html`
@@ -38,6 +44,10 @@ export default state => html`
               <td>${updates.name}</td>
               <td>${updates.allergies}</td>
               <td>${updates.notes}</td>
+              <td>${updates.emailSent}</td>
+              <td>${updates.status}</td>
+              <td>${updates.customer}</td>
+
               <td>
                 <button
                   class="delete"
