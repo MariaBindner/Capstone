@@ -12,19 +12,21 @@ export default state => html`
         <option value="name">Name</option>
         <option value="allergies">Allergies</option>
         <option value="notes">Notes</option>
-        <option value="customer">Customer</option>
+        <option value="customer">Customer / Order Placer</option>
       </select>
       <input type="search" name="filter" id="filter" />
       <button id="search-button">Search</button>
     </div>
     <table id="Ordersubmissions">
       <tr>
-        <th>Crust</th>
+        <th>Bread</th>
         <th>Cheese</th>
-        <th>Sauce</th>
-        <th>Toppings</th>
-        <th>Customer</th>
-        <th>Actions</th>
+        <th>Protein</th>
+        <th>Customizations</th>
+        <th>Name</th>
+        <th>Allergies</th>
+        <th>Notes</th>
+        <th>Customer / Order Placer</th>
       </tr>
       ${state.Ordersubmissions.map((Ordersubmission, index) => {
         return html`
@@ -32,12 +34,11 @@ export default state => html`
             <td>${Ordersubmission.bread}</td>
             <td>${Ordersubmission.cheese}</td>
             <td>${Ordersubmission.protein}</td>
-            <td>${Ordersubmission.condiments}</td>
-            <td>${Ordersubmission.sprinkles}</td>
+            <td>${Ordersubmission.customizations}</td>
             <td>${Ordersubmission.allergies}</td>
             <td>${Ordersubmission.notes}</td>
-            //
-            <td>${Ordersubmission.toppings.join(" & ")}</td>
+            <td>${Ordersubmission.customer}</td>
+            <td>${Ordersubmission.customizations.join(" & ")}</td>
             <td>${Ordersubmission.name}</td>
             <td>
               <button

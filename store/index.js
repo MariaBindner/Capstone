@@ -6,7 +6,6 @@ export { default as History } from "./History";
 export { default as Holidays } from "./Holidays";
 export { default as Home } from "./Home";
 export { default as Links } from "./Links";
-export { default as Menu } from "./Menu";
 export { default as Ordersubmission } from "./Ordersubmission";
 export { default as Updates } from "./Updates";
 export { default as Viewnotfound } from "./Viewnotfound";

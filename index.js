@@ -31,27 +31,9 @@ function afterRender(state) {
       // Get the form element
       const inputList = event.target.elements;
       // console.log("Input Element List", inputList);
+      // Create an empty array to hold the toppings
+      const customizations = [];
 
-      for (let input of inputList.bread) {
-        // If the value of the checked attribute is true then add the value to the toppings array
-        if (input.checked) {
-          bread.push(input.value);
-        }
-      }
-
-      for (let input of inputList.cheese) {
-        // If the value of the checked attribute is true then add the value to the toppings array
-        if (input.checked) {
-          cheese.push(input.value);
-        }
-      }
-
-      for (let input of inputList.protein) {
-        // If the value of the checked attribute is true then add the value to the toppings array
-        if (input.checked) {
-          protein.push(input.value);
-        }
-      }
       // // Iterate over the toppings array
       for (let input of inputList.customizations) {
         // If the value of the checked attribute is true then add the value to the toppings array
@@ -59,40 +41,14 @@ function afterRender(state) {
           customizations.push(input.value);
         }
       }
-      // Create an empty array to hold the toppings
-      const customizations = [];
 
-      const name = [];
-
-      for (let input of inputList.name) {
-        // If the value of the checked attribute is true then add the value to the toppings array
-        if (input.checked) {
-          name.push(input.value);
-        }
-      }
-
-      for (let input of inputList.allergies) {
-        // If the value of the checked attribute is true then add the value to the toppings array
-        if (input.checked) {
-          allergies.push(input.value);
-        }
-      }
-      const allergies = [];
-
-      for (let input of inputList.notes) {
-        // If the value of the checked attribute is true then add the value to the toppings array
-        if (input.checked) {
-          notes.push(input.value);
-        }
-      }
-
-      const notes = [];
       // Create a request body object to send to the API
       const requestData = {
+        customer: inputList.customer.value,
         bread: inputList.bread.value,
         cheese: inputList.cheese.value,
         protein: inputList.protein.value,
-        customizations: inputList.condiments.value,
+        customizations: customizations,
         name: inputList.name.value,
         allergies: inputList.allergies.value,
         notes: inputList.notes.value
@@ -104,10 +60,10 @@ function afterRender(state) {
         // Make a POST request to the API to create a new pizza
         //     .post(`${process.env.ORDER_UP_API_URL}/Ordersubmission?${column}=${filter}`)
         //  .then(response => {
-        .post(`${process.env.ORDER_UP_API_URL}/Ordersubmission`, requestData)
+        .post(`${process.env.ORDER_UP_API_URL}/ordersubmission`, requestData)
         .then(response => {
           //  Then push the new pizza onto the Pizza state pizzas attribute, so it can be displayed in the pizza list
-          store.Ordersubmission.ordersubmissions.push(response.data);
+          store.Ordersubmission.order.push(response.data);
           router.navigate("/Ordersubmission");
         })
         // If there is an error log it to the console
@@ -117,7 +73,7 @@ function afterRender(state) {
     });
   }
 
-  if (state.view === "Ordersubmission") {
+  if (state.view === "History") {
     document
       .getElementById("search-button")
       .addEventListener("click", event => {
@@ -133,8 +89,8 @@ function afterRender(state) {
           )
           .then(response => {
             // We need to store the response to the state, in the next step but in the meantime let's see what it looks like so that we know what to store from the response.
-            store.Ordersubmission.ordersubmissions = response.data;
-            router.navigate("/Ordersubmission");
+            store.History.ordersubmissions = response.data;
+            router.navigate("/History");
           })
           .catch(error => {
             console.log("Uh oh!", error);
@@ -187,25 +143,26 @@ router.hooks({
     switch (view) {
       // Add a case for each view that needs data from an API
 
-      case "Ordersubmission":
-        //above is referring to referencing view called ordersubmission
-        // New Axios get request utilizing already made environment variable
-        axios
-          .get(`${process.env.ORDER_UP_API_URL}/ordersubmissions`)
-          .then(response => {
-            // We need to store the response to the state, in the next step but in the meantime let's see what it looks like so that we know what to store from the response.
-            console.log("response", response);
-            console.log("response data", response.data);
+      // case "Ordersubmission":
+      //   //above is referring to referencing view called ordersubmission
+      //   // New Axios get request utilizing already made environment variable
 
-            store.Ordersubmission.Ordersubmissions = response.data;
+      //   axios
+      //     .get(`${process.env.ORDER_UP_API_URL}/ordersubmission`)
+      //     .then(response => {
+      //       // We need to store the response to the state, in the next step but in the meantime let's see what it looks like so that we know what to store from the response.
+      //       console.log("response", response);
+      //       console.log("response data", response.data);
 
-            done();
-          })
-          .catch(error => {
-            console.log("Uh oh!", error);
-            done();
-          });
-        break;
+      //       store.Ordersubmission.Ordersubmissions = response.data;
+
+      //       done();
+      //     })
+      //     .catch(error => {
+      //       console.log("Uh oh!", error);
+      //       done();
+      //     });
+      //   break;
       case "Holidays":
         axios
           .get(
