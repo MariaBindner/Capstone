@@ -58,13 +58,13 @@ E         required
         />
       </div>
       <div>
-        <label for="notes">Notes including drop off details:</label>
+        <label for="notes">Notes, including drop off details:</label>
         <input
           type="text"
           name="notes"
           id="notes"
           placeholder="Enter Notes for Event"
-          required
+          optional
         />
       </div>
       <div>
