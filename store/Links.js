@@ -1,7 +1,6 @@
 export default [
   { title: "Home", text: "Home" },
   { title: "Event", text: "Event" },
-  { title: "Groupemail", text: "Group Email" },
   { title: "Ordersubmission", text: "Order Submission" },
   { title: "History", text: "History" },
   { title: "Updates", text: "Updates" },

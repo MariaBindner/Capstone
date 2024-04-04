@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const OrdersubmissionSchema = new mongoose.Schema({
+const ordersubmissionSchema = new mongoose.Schema({
   customer: {
     type: String,
     required: true,
@@ -26,7 +26,7 @@ const OrdersubmissionSchema = new mongoose.Schema({
 });
 const Ordersubmission = mongoose.model(
   "Ordersubmission",
-  OrdersubmissionSchema
+  ordersubmissionSchema
 );
 
 export default Ordersubmission;
