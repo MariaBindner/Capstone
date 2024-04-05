@@ -10,6 +10,8 @@ router.post("/", async (request, response) => {
 
     const data = await newOrdersubmission.save();
 
+    // const body = request.body;
+
     response.json(data);
   } catch (error) {
     // Output error to the console incase it fails to send in response

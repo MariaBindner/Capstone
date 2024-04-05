@@ -5,7 +5,14 @@ export default state => html`
 <section id="menu">
     <h2>Menu</h2>
     <ul>
-      ${state.Ordersubmission.menuItems.map(item => item.join(""))}
+      ${state.menuItems
+        .map(
+          item =>
+            html`
+              <li>${item.name}: ${item.price}</li>
+            `
+        )
+        .join("")}
     </ul>
   </section>
 

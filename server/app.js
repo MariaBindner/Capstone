@@ -2,7 +2,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
-import Ordersubmission from "./routers/Ordersubmission.js";
+import ordersubmissions from "./routers/ordersubmissions.js";
 
 // Load environment variables from .env file
 dotenv.config();
@@ -82,7 +82,7 @@ app.get("/holidays", (request, response) => {
 });
 // app.use("/holidays", holidays);
 
-app.use("/ordersubmission", Ordersubmission);
+app.use("/ordersubmission", ordersubmissions);
 
 // Tell the Express app to start listening
 // Let the humans know I am running and listening on 4040
