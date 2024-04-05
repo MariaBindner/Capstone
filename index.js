@@ -63,7 +63,7 @@ function afterRender(state) {
         .post(`${process.env.ORDER_UP_API_URL}/ordersubmission`, requestData)
         .then(response => {
           //  Then push the new pizza onto the Pizza state pizzas attribute, so it can be displayed in the pizza list
-          store.Ordersubmission.order.push(response.data);
+          store.Ordersubmission.order = response.data;
           router.navigate("/Ordersubmission");
         })
         // If there is an error log it to the console
@@ -74,29 +74,29 @@ function afterRender(state) {
   }
 
   if (state.view === "History") {
-    document
-      .getElementById("search-button")
-      .addEventListener("click", event => {
-        event.preventDefault();
+    // document
+    //   // .getElementById("search-button")
+    //   .addEventListener("click", event => {
+    //     event.preventDefault();
 
-        const column = document.getElementById("column").value;
-        const filter = document.getElementById("filter").value;
+    //     const column = document.getElementById("column").value;
+    //     const filter = document.getElementById("filter").value;
 
-        axios
-          .get(
-            `${process.env.ORDER_UP_API_URL}/Ordersubmission?${column}=${filter}`
-          )
-          // or .get(`${process.envORDER_UP_API_URL}/Ordersubmissions?${column}=${filter}`)
+    //     axios
+    //       .get(
+    //         `${process.env.ORDER_UP_API_URL}/Ordersubmission?${column}=${filter}`
+    //       )
+    //       // or .get(`${process.envORDER_UP_API_URL}/Ordersubmissions?${column}=${filter}`)
 
-          .then(response => {
-            // We need to store the response to the state, in the next step but in the meantime let's see what it looks like so that we know what to store from the response.
-            store.History.ordersubmissions = response.data;
-            router.navigate("/History");
-          })
-          .catch(error => {
-            console.log("Uh oh!", error);
-          });
-      });
+    //       .then(response => {
+    //         // We need to store the response to the state, in the next step but in the meantime let's see what it looks like so that we know what to store from the response.
+    //         store.History.ordersubmissions = response.data;
+    //         router.navigate("/History");
+    //       })
+    //       .catch(error => {
+    //         console.log("Uh oh!", error);
+    //       });
+    //   });
 
     Array.from(document.getElementsByClassName("delete")).forEach(button => {
       button.addEventListener("click", event => {
@@ -144,26 +144,26 @@ router.hooks({
     switch (view) {
       // Add a case for each view that needs data from an API
 
-      // case "Ordersubmission":
-      //   //above is referring to referencing view called ordersubmission
-      //   // New Axios get request utilizing already made environment variable
+      case "Ordersubmission":
+        //   //above is referring to referencing view called ordersubmission
+        //   // New Axios get request utilizing already made environment variable
 
-      //   axios
-      //     .get(`${process.env.ORDER_UP_API_URL}/ordersubmission`)
-      //     .then(response => {
-      //       // We need to store the response to the state, in the next step but in the meantime let's see what it looks like so that we know what to store from the response.
-      //       console.log("response", response);
-      //       console.log("response data", response.data);
+        axios
+          .get(`${process.env.ORDER_UP_API_URL}/ordersubmission`)
+          .then(response => {
+            //       // We need to store the response to the state, in the next step but in the meantime let's see what it looks like so that we know what to store from the response.
+            console.log("response", response);
+            console.log("response data", response.data);
 
-      //       store.Ordersubmission.Ordersubmissions = response.data;
+            store.Ordersubmission.order = response.data;
 
-      //       done();
-      //     })
-      //     .catch(error => {
-      //       console.log("Uh oh!", error);
-      //       done();
-      //     });
-      //   break;
+            done();
+          })
+          .catch(error => {
+            console.log("Uh oh!", error);
+            done();
+          });
+        break;
       case "Holidays":
         axios
           .get(
@@ -186,9 +186,9 @@ router.hooks({
       // Do stuff here
       // done();
       // break;
-      //default:
-      //done();
-      //break;
+      default:
+        done();
+        break;
     }
   },
 

@@ -8,21 +8,22 @@
 }
 
 #jumbotron > h2 {
-  color:  whitesmoke;
+  color:  transparent;
   text-align: bottom;
 }
 
 #jumbotron > a {
   text-decoration: none;
-  background-color:  rgb(201, 197, 197);
+  background-color:  transparent
   font-size: 1.5em;
   padding: 1.5rem;
   border-radius: 10px;
-  margin-bottom: 0px;
+  margin-bottom: 10px;
 
 }
 
-body { background-color: #edf4f5;
+body {
+  background-color: #edf4f5;
 
 }
 
