@@ -1,5 +1,5 @@
 import { Router } from "express";
-import Ordersubmission from "../models/ordersubmission.js";
+import ordersubmission from "../models/ordersubmission.js";
 
 const router = Router();
 
