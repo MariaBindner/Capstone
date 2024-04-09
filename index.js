@@ -62,7 +62,7 @@ function afterRender(state) {
         //  .then(response => {
         .post(`${process.env.ORDER_UP_API_URL}/ordersubmission`, requestData)
         .then(response => {
-          //  Then push the new pizza onto the Pizza state pizzas attribute, so it can be displayed in the pizza list
+          //  Then push the new Ordersubmission onto the Ordersubmission state ordersubmission attribute, so it can be displayed in the Ordersubmission list
           store.Ordersubmission.order = response.data;
           router.navigate("/Ordersubmission");
         })

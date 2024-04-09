@@ -83,7 +83,7 @@ E         required
       </div>
       <input type="submit" name="submit" value="Submit Event Details and Go To 'Group Email'" />
 
-    //<input type="save" name="save" value="Submit Event Details and Place Order" />
+    <!-- <input type="save" name="save" value="Submit Event Details and Place Order" /> -->
 
           </form>
   </section>
