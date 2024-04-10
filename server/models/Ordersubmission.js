@@ -9,7 +9,7 @@ const ordersubmissionSchema = new mongoose.Schema({
   bread: {
     type: String,
     required: true,
-    enum: ["herb pita", "lettuce-wrap", "skinny-bread"]
+    enum: ["regular-burger-bun", "lettuce-wrap", "herb pita"]
   },
   cheese: {
     type: String,
